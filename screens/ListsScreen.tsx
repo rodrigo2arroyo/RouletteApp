@@ -5,7 +5,8 @@ import add = Animated.add;
 
 const ListsScreen = () => {
 
-    const [lists, setLists] = useState<{ id: number, leftButtonTitle: string, rightButtonTitle: string, text: string, onLeftButtonPress: any, onRightButtonPress: any  }[]>([]);
+    const [lists, setLists] =
+        useState<{ id: number, leftButtonTitle: string, rightButtonTitle: string, text: string, onLeftButtonPress: any, onRightButtonPress: any  }[]>([]);
 
     const addList = () => {
         setLists([...lists, { id: lists.length, leftButtonTitle: 'Left', rightButtonTitle: 'Right', text: 'New List', onLeftButtonPress: null, onRightButtonPress: null }]);
@@ -16,7 +17,7 @@ const ListsScreen = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>This is the Details Screen</Text>
-            <List leftButtonTitle='123' rightButtonTitle='123' text='123' onLeftButtonPress={null} onRightButtonPress={null}>
+            <List leftButtonTitle='123' rightButtonTitle='123' text='123' onLeftButtonPress={null} onRightButtonPress={null} onDeletePress={null}>
 
             </List>
             {lists.map(list => (
@@ -27,7 +28,7 @@ const ListsScreen = () => {
                     text={list.text}
                     onLeftButtonPress={() => console.log('Left button pressed')}
                     onRightButtonPress={() => console.log('Right button pressed')}
-                />
+                    onDeletePress={null}/>
             ))}
             <Button title='Agregar Lista' onPress={addList}>
 

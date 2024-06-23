@@ -1,4 +1,3 @@
-// screens/HomeScreen.tsx
 import React from 'react';
 import {View, Text, Button, StyleSheet, SafeAreaView} from 'react-native';
 

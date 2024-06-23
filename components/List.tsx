@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { Swipeable } from 'react-native-gesture-handler';
 
-interface CardProps {
+interface ListProps  {
     leftButtonTitle: string;
     rightButtonTitle: string;
     text: string;
@@ -11,7 +11,7 @@ interface CardProps {
     onDeletePress: () => void;
 }
 
-const Card: React.FC<CardProps> = ({
+const List: React.FC<ListProps> = ({
                                        leftButtonTitle,
                                        rightButtonTitle,
                                        text,
@@ -77,4 +77,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Card;
+export default List;
