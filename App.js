@@ -1,12 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import HomeScreen from './screens/HomeScreen';
+import ListsScreen from "./screens/ListsScreen";
+import ComingSoonScreen from "./screens/ComingSoonScreen";
+import listsScreen from "./screens/ListsScreen";
+
+const HomeStack = createStackNavigator();
+const SettingsStack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const HomeStackScreen = () => (
+    <HomeStack.Navigator screenOptions={{ headerShown: false }}>
+        <HomeStack.Screen name="Home" component={HomeScreen} />
+        <HomeStack.Screen name="Details" component={ListsScreen} />
+    </HomeStack.Navigator>
+);
+
+const SettingsStackScreen = () => (
+    <SettingsStack.Navigator screenOptions={{ headerShown: false }}>
+        <SettingsStack.Screen name="Settings" component={ComingSoonScreen} />
+        <SettingsStack.Screen name="Details" component={ListsScreen} />
+    </SettingsStack.Navigator>
+);
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <NavigationContainer>
+          <Tab.Navigator screenOptions={{ headerShown: false }}>
+              <Tab.Screen name="Roulette" component={HomeStackScreen} />
+              <Tab.Screen name="Soon" component={SettingsStackScreen} />
+          </Tab.Navigator>
+      </NavigationContainer>
   );
 }
 
