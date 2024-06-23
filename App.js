@@ -9,6 +9,7 @@ import HomeScreen from './screens/HomeScreen';
 import ListsScreen from "./screens/ListsScreen";
 import ComingSoonScreen from "./screens/ComingSoonScreen";
 import listsScreen from "./screens/ListsScreen";
+import ListOptionsScreen from "./screens/ListOptionsScreen";
 
 const HomeStack = createStackNavigator();
 const SettingsStack = createStackNavigator();
@@ -18,6 +19,7 @@ const HomeStackScreen = () => (
     <HomeStack.Navigator screenOptions={{ headerShown: false }}>
         <HomeStack.Screen name="Home" component={HomeScreen} />
         <HomeStack.Screen name="Details" component={ListsScreen} />
+        <HomeStack.Screen name="ListOptions" component={ListOptionsScreen} />
     </HomeStack.Navigator>
 );
 

@@ -18,8 +18,8 @@ const HomeScreen = ({ navigation }) => {
             </View>
             <View style={styles.buttonRight}>
                 <Button
-                    title="Details"
-                    onPress={() => navigation.navigate('Details')}
+                    title="View options"
+                    onPress={() => navigation.navigate('ListOptions')}
                 />
             </View>
         </SafeAreaView>
