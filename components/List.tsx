@@ -38,7 +38,7 @@ const List: React.FC<ListProps> = ({
 
     return (
         <Swipeable renderRightActions={renderRightActions} renderLeftActions={renderLeftActions}>
-            <View style={styles.card}>
+            <View style={styles.list}>
                 <Button title={leftButtonTitle} onPress={onLeftButtonPress} />
                 <Text style={styles.text}>{text}</Text>
                 <Button title={rightButtonTitle} onPress={onRightButtonPress} />
@@ -48,12 +48,13 @@ const List: React.FC<ListProps> = ({
 };
 
 const styles = StyleSheet.create({
-    card: {
+    list: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 16,
         margin: 16,
+        width: '90%',
         backgroundColor: '#fff',
         borderRadius: 8,
         shadowColor: '#000',
